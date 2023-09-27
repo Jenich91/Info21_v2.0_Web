@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="import_table_peers" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('peers', current_setting('path_to_src.var')||'/peers.csv',',');
+        </sql>
+    </changeSet>
+
+    <changeSet id="import_table_tasks" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+            SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+            CALL pr_fill_table_from_csv('tasks', current_setting('path_to_src.var')||'/tasks.csv',',');
+        </sql>
+    </changeSet>
+
+    <changeSet id="import_table_checks" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('checks', current_setting('path_to_src.var')||'/checks.csv',',');
+        </sql>
+    </changeSet>
+
+    <changeSet id="import_table_p2p" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('p2p', current_setting('path_to_src.var')||'/p2p.csv',',');
+        </sql>
+    </changeSet>
+
+    <changeSet id="import_table_verter" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('verter', current_setting('path_to_src.var')||'/verter.csv',',');
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="import_table_xp" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('xp', current_setting('path_to_src.var')||'/xp.csv',',');
+        </sql>
+    </changeSet>
+
+    <changeSet id="import_table_friends" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('friends', current_setting('path_to_src.var')||'/friends.csv',',');
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="import_table_recommendations" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('recommendations', current_setting('path_to_src.var')||'/recommendations.csv',',');
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="import_table_timetracking" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('time_tracking', current_setting('path_to_src.var')||'/timetracking.csv',',');
+        </sql>
+    </changeSet>
+
+    <changeSet id="import_table_transferredPoints" author="cnathali">
+        <sql endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+                SET path_to_src.var TO '/docker-entrypoint-initdb.d';
+                CALL pr_fill_table_from_csv('transferred_points', current_setting('path_to_src.var')||'/transferredpoints.csv',',');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
